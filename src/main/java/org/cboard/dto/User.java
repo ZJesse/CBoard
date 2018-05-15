@@ -13,6 +13,9 @@ public class User extends org.springframework.security.core.userdetails.User {
     private String company;
     private String department;
     private String name;
+    private String chyCode;
+    private String chyPcode;
+    private boolean admin;
 
     public User(String username, String password, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
@@ -52,6 +55,30 @@ public class User extends org.springframework.security.core.userdetails.User {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getChyCode() {
+        return chyCode;
+    }
+
+    public void setChyCode(String chyCode) {
+        this.chyCode = chyCode;
+    }
+
+    public String getChyPcode() {
+        return chyPcode;
+    }
+
+    public void setChyPcode(String chyPcode) {
+        this.chyPcode = chyPcode;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
 
