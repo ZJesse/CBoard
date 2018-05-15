@@ -18,7 +18,7 @@
         create_time   AS createTime,
         update_time   AS updateTime
         FROM dashboard_widget w
-        LEFT JOIN dashboard_user u ON u.user_id = w.user_id
+        LEFT JOIN dashboard_user_v u ON u.user_id = w.user_id
     </select>
 
     <select id="getWidgetList" resultType="org.cboard.pojo.DashboardWidget">
@@ -33,7 +33,7 @@
               create_time  AS createTime,
               update_time  AS updateTime
          FROM dashboard_widget w
-         LEFT JOIN dashboard_user u ON u.user_id = w.user_id
+         LEFT JOIN dashboard_user_v u ON u.user_id = w.user_id
         WHERE (#{0} = '${admin_user_id}' OR w.user_id = #{0} OR widget_id IN (SELECT res_id FROM dashboard_user_role ur LEFT JOIN dashboard_role_res rr ON ur.role_id = rr.role_id WHERE ur.user_id = #{0} AND rr.res_type = 'widget'))
         ORDER BY widget_name
     </select>
@@ -50,7 +50,7 @@
                create_time   AS createTime,
                update_time   AS updateTime
           FROM dashboard_widget w
-          LEFT JOIN dashboard_user u ON u.user_id = w.user_id
+          LEFT JOIN dashboard_user_v u ON u.user_id = w.user_id
          WHERE (
             #{0} = '${admin_user_id}'
             OR w.user_id = #{0}

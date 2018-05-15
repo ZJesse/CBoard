@@ -32,7 +32,7 @@
         j.cron_exp       AS cronExp,
         j.last_exec_time AS lastExecTime,
         j.exec_log AS execLog,
-        (select u.user_name from dashboard_user u where u.user_id = j.user_id) as userName,
+        (select u.user_name from dashboard_user_v u where u.user_id = j.user_id) as userName,
         j.job_status AS jobStatus
         FROM dashboard_job j
         WHERE j.job_id = #{0}
@@ -50,7 +50,7 @@
                j.cron_exp       AS cronExp,
                j.last_exec_time AS lastExecTime,
                j.exec_log AS execLog,
-               (select u.user_name from dashboard_user u where u.user_id = j.user_id) as userName,
+               (select u.user_name from dashboard_user_v u where u.user_id = j.user_id) as userName,
                j.job_status AS jobStatus
           FROM dashboard_job j
          WHERE #{0} = '${admin_user_id}' OR j.user_id = #{0}
@@ -75,7 +75,7 @@
                j.cron_exp       AS cronExp,
                j.last_exec_time AS lastExecTime,
                j.exec_log AS execLog,
-               (select u.user_name from dashboard_user u where u.user_id = j.user_id) as userName,
+               (select u.user_name from dashboard_user_v u where u.user_id = j.user_id) as userName,
                j.job_status AS jobStatus
          FROM dashboard_job j
         WHERE #{0} = '${admin_user_id}'
