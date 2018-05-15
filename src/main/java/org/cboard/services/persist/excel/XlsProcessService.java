@@ -244,13 +244,13 @@ public class XlsProcessService {
     private CellStyle createTStyle(HSSFWorkbook wb) {
         CellStyle tStyle = wb.createCellStyle();
         tStyle.setBorderBottom(BorderStyle.THIN);
-        tStyle.setBottomBorderColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        tStyle.setBottomBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
         tStyle.setBorderLeft(BorderStyle.THIN);
-        tStyle.setLeftBorderColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        tStyle.setLeftBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
         tStyle.setBorderRight(BorderStyle.THIN);
-        tStyle.setRightBorderColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        tStyle.setRightBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
         tStyle.setBorderTop(BorderStyle.THIN);
-        tStyle.setTopBorderColor(IndexedColors.GREY_25_PERCENT.getIndex());
+        tStyle.setTopBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
         tStyle.setAlignment(HorizontalAlignment.CENTER);
         tStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         tStyle.setShrinkToFit(true);
