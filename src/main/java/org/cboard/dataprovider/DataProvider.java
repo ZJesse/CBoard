@@ -41,7 +41,7 @@ public abstract class DataProvider {
     private boolean isUsedForTest = false;
     private long interval = 12 * 60 * 60; // second
 
-    public static final String NULL_STRING = "#NULL";
+    public static final String NULL_STRING = "";//null值默认为空字符串
     private static final Logger logger = LoggerFactory.getLogger(DataProvider.class);
 
     static {
