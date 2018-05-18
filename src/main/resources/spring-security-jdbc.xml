@@ -23,10 +23,17 @@
     </security:http>
 
     <security:authentication-manager alias="authenticationManager">
-        <security:authentication-provider ref="shareAuthenticationProviderDecorator"/>
+        <!--<security:authentication-provider ref="shareAuthenticationProviderDecorator"/>-->
+        <security:authentication-provider ref="brAuthenticationProvider"/>
     </security:authentication-manager>
+    <bean id="brUserDetailsService" class="org.cboard.br.BrUserDetailService">
+        <property name="UserDao" ref="userDao"/>
+    </bean>
+    <bean id="brAuthenticationProvider" class="org.cboard.br.BrAuthenticationProvider">
+        <property name="userDetailsService" ref="brUserDetailsService"/>
+    </bean>
 
-    <bean id="shareAuthenticationProviderDecorator" class="org.cboard.security.service.ShareAuthenticationProviderDecorator">
+    <!--<bean id="shareAuthenticationProviderDecorator" class="org.cboard.security.service.ShareAuthenticationProviderDecorator">
         <property name="authenticationProvider" ref="daoAuthenticationProvider"/>
     </bean>
 
@@ -62,7 +69,7 @@
     </bean>
 
     <bean id="passwordEncoder"
-          class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+          class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>-->
 
     <bean id="dbAuthenticationService"
           class="org.cboard.security.service.DefaultAuthenticationService"/>
